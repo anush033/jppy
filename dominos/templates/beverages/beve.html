@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h4>beverages corner</h4>
+</head>
+<body>
+<link rel="stylesheet" href="{%static 'css/demo.css'%}">
+<img src="{%static 'images/drnks.jpg'%}" width="100">
+{%if beve_list%}
+<table>
+    <thead>
+    <th>beve_name</th>
+    <th>size</th>
+    <th>ice</th>
+    {%for d in beve_list%}
+    <tr>
+        <td>{{d.beve_name}}</td>
+        <td>{{d.size}}</td>
+        <td>{{d.ice}}</td>
+    </tr>
+    {%endfor%}
+{%else%}
+    <h>data not found</h>
+    {%endif%}
+    </thead>
+</table>
+
+
+</body>
+</html>

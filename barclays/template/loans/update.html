@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {%csrf_token%}
+
+    Loan id: <input type="text" name = "loanid" value="{{record.loanid}}">
+    <p></p>
+    Loan acc: <input type="text" name = "loan_acc" value="{{record.loan_acc}}">
+      <p></p>
+    Loan name: <input type="text" name = "name" value="{{record.name}}">
+      <p></p>
+    Loan age: <input type="text" name = "age" value="{{record.age}}">
+      <p></p>
+    Loan city: <input type="text" name = "city" value="{{record.city}}">
+  <p></p>
+    <input type="submit"   class="btn btn primary btn-lg btn-success" value="Update">
+</form>
+</body>
+</html>

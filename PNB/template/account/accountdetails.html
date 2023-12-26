@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM</title>
+</head>
+<body>
+{%block baseblock%}
+{% if accounts%}
+<table border="1px" align="center" cellpadding="3px">
+    <thead>
+    <th>acc_id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Date</th>
+    <th>Count</th>
+    <th>Action</th>
+    </thead>
+    {%for acc in accounts%}
+    <tr>
+        <td>{{acc.acc_id}}</td>
+        <td> {{acc.Name}}</td>
+        <td> {{acc.Age}}</td>
+        <td> {{acc.Email}}</td>
+        <td> {{acc.Contact}}</td>
+        <td> {{acc.Date}}</td>
+        <td> {{acc.Count}}</td>
+        <td><a class="btn btn-primary btn-lg btn-success" href="/accounts/update/{{acc.acc_id}}" >update</a></td>
+        <td><a class="btn btn-primary btn-lg btn-success" href="/accounts/delete/{{acc.acc_id}} ">delete</a></td>
+    </tr>
+
+    {%endfor%}
+
+</table>
+
+{%endif%}
+<br>
+<div align="center">
+    <td><a class="btn btn-primary btn-lg btn-success" href="/auth/login/">Create</a></td>
+</div>
+{%endblock%}
+</body>
+</html>

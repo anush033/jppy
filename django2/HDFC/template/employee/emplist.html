@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if emp_list %}
+<table>
+    <thead>
+    <th>name</th>
+    <th>email</th>
+    <th>contact</th>
+    </thead>
+    {% for e in emp_list %}
+    <tr>
+        <td>{{e.name}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.contact}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{%else%}
+<p>No data found</p>
+{%endif%}
+
+
+
+</body>
+</html>

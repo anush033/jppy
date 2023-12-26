@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM</title>
+</head>
+<body>
+{%block baseblock%}
+{% if emp%}
+<table border="1px" align="center" cellpadding="3px">
+    <thead>
+    <th>loan_id</th>
+    <th>loanholdername</th>
+    <th>loan_acc_no</th>
+    <th>loan_amount</th>
+
+    </thead>
+    {%for acc in emp%}
+    <tr>
+        <td>{{acc.loan_id}}</td>
+        <td> {{acc.loanholdername}}</td>
+        <td> {{acc.loan_acc_no}}</td>
+        <td> {{acc.loan_amount}}</td>
+
+
+    </tr>
+
+    {%endfor%}
+
+</table>
+
+{%endif%}
+<br>
+<div align="center">
+    <td><a class="btn btn-primary btn-lg btn-success" href="/auth/login/">Create</a></td>
+</div>
+{%endblock%}
+</body>
+</html>

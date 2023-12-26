@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product_details</title>
+</head>
+<body>
+{% if product_list %}
+<table>
+    <thead>
+    <th>brand_name</th>
+    <th>price</th>
+    <th>size</th>
+    </thead>
+    {% for e in product_list %}
+    <tr>
+        <td>{{e.brand_name}}</td>
+        <td>{{e.price}}</td>
+        <td>{{e.size}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{%else%}
+<p>No data found</p>
+{% endif %}
+
+</body>
+</html>

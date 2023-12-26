@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+{% if accounts%}
+<table border="1px" align="center" cellpadding="3px">
+    <thead>
+    <th>refid</th>
+    <th>name</th>
+    <th>age</th>
+    <th>email</th>
+    <th>DOR</th>
+    <th>count</th>
+    <th>mobile</th>
+    </thead>
+{%for account in accounts%}
+    <tr>
+        <td> {{account.refid}}</td>
+        <td> {{account.name}}</td>
+        <td> {{account.age}}</td>
+        <td> {{account.email}}</td>
+        <td> {{account.DOR}}</td>
+        <td> {{account.count}}</td>
+        <td> {{account.mobile}}</td>
+    </tr>
+
+    {%endfor%}
+</table>
+
+
+
+
+{%else%}
+
+<h1> No Data Found</h1>
+{%endif%}
+
+
+{%endblock%}
+</body>
+</html>

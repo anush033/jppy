@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+{%block baseblock%}
+<form  method='POST'>
+       {%csrf_token%}
+       acc_id:<input type="text" name="acc_id" value="{{record.acc_id}}">
+    <p></p>
+       Name:<input type="text" name="Name" value="{{record.Name}}">
+    <p></p>
+
+       Age:<input type="text" name="Age" value="{{record.Age}}">
+    <p></p>
+
+       Email:<input type="text" name="Email" value="{{record.Email}}">
+    <p></p>
+
+       Contact:<input type="text" name="Contact" value="{{record.Contact}}">
+    <p></p>
+
+       Date:<input type="text" name="Date" value="{{record.Date}}">
+    <p></p>
+       <input type="submit" class="btn btn-primary btn-lg btn-success" value="update">
+   </form>
+{%endblock%}
+</body>
+</html>

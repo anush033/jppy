@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>membership form</title>
+</head>
+<body>
+
+<div class="container" align="center">
+    <h1>zara Registration Form</h1>
+
+    <form method="POST"> <!-- Added method="POST" to specify the form submission method -->
+
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" name="submit" value="Submit"> <!-- Fixed the attributes -->
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+<html lang="en">
+<body>
+{%block baseblock%}
+<link rel ="stylesheet" href="{%static 'css/styles.css'%}">
+<body style="background-color:powderblue;">
+<div class="container" align="center">
+    <h1> Welcome to loan request form</h1>
+    <form method="post">
+        {{obj.as_p}}
+        {%csrf_token%}
+        <input type="submit" onclick="return confirm('do you confirm your details')" value="submit" name="submit">
+    </form>
+
+</div>
+{%endblock%}
+</body>
+</html>

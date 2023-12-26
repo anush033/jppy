@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%extends "base.html"%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+
+{% if  loan_objects %}
+<table align="center" border="2">
+    <thead>
+    <th>id</th>
+    <th> account number</th>
+    <th> name</th>
+    <th> age</th>
+    <th>city</th>
+    <th> Action</th>
+    </thead>
+        {% for e  in loan_objects%}
+                    <tr>
+                        <td>{{e.loanid}}</td>
+                        <td>{{e.loan_acc}}</td>
+                        <td>{{e.name}}</td>
+                        <td>{{e.age}}</td>
+                        <td>{{e.city}}</td>
+                        <td><a class="btn btn primary btn-lg btn-success" href="/loans/update/{{e.loanid}}">Update</a>
+                            <a class="btn btn primary btn-lg btn-success" href="/loans/delete/{{e.loanid}}">Delete</a>
+
+                        </td>
+                    </tr>
+{%endfor%}
+</table>
+{%else%}
+<h1> No Data Found</h1>
+{%endif%}
+<br>
+<div align="center">
+<a class="btn btn primary btn-lg btn-success" href="/loans/loanform/">Create</a>
+</div>
+{%endblock%}
+</body>
+</html>
